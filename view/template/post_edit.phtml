@@ -1,0 +1,24 @@
+	<a href="/">на главную</a>	
+	<? if($action === 'add') {}?>
+
+	<h2>
+		<? if($action === 'add'): ?>Добавить пост
+		<? else: ?>Редактировать пост<?endif?>
+	</h2>
+	<div class="admin">
+		<div class="admin_item">
+		<form action="/post/<?=$action?>" method="post">
+			<?if(isset($err['empty_field'])):?><div>Вы не заполнили все поля</div><?endif?>
+			<?if(isset($err['wrong_check_url'])):?><div>Даный url существует</div><?endif?>
+			<?if(isset($err['wrong_check_title'])):?><div>Даный title существует</div><?endif?>
+
+			<div class="field_row">url: <br /><input class="field" name="url" value="<?
+				if(isset($post['url'])) echo $post['url'];
+			?>" /></div>
+
+			<div class="field_row">Название: <br /><input class="field" name="title" value="<?=@$post['title']?>" /></div>
+			<div class="text_field">Текст: <br /><textarea rows="7" cols="50" class="field" name="text" ><?=@$post['text']?></textarea></div>
+			<input type="submit" value="Отправить" />
+		</form>
+		</div>
+	</div>

@@ -1,0 +1,153 @@
+<!-- Intro -->
+<script type="text/javascript">
+    function sliderChange(val, num){
+        if(num == 1)
+            document.getElementById('sliderStatus').innerHTML = val;
+        if(num == 2)
+            document.getElementById('sliderStatus2').innerHTML = val;
+    }
+</script>
+
+<div class="intro">
+    <div class="container">
+        <div class="header_item">
+            <!--Calculator-->
+            <div class="calc">
+                <div class="calculator_form">
+                    <h3>Crédito online on minutos</h3>
+                    <div class="txtb">
+                        <span class="calc">¿Cuánto necesitas?</span>
+                        <span id="sliderStatus">500 </span>€
+
+                        <div class="middle">
+                            <div class="slider_container">
+                                <span class="bar"><span class="fill"></span></span>
+                                <input id="slider" class="slider" type="range" min="50" max="1000" value="500" step="10" oninput="sliderChange(this.value, 1)" />
+                            </div>
+                        </div>
+
+                        <!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+                        <script>
+                            var $slider = $("#slider");
+                            var $fill = $(".bar .fill");
+
+                            function setBar(){
+                                $fill.css("width", $slider.val() + "%");
+                            }
+
+                            $slider.on("input", setBar);
+
+                            setBar();
+                        </script>
+                    </div>
+
+                    <div class="txtb">
+		<span class="calc">¿Cuándo
+prefieres devolverlo?</span>
+                        <span id="sliderStatus2">12</span> días
+
+                        <div class="middle">
+                            <div class="slider_container">
+                                <span class="bar"><span class="fill"></span></span>
+                                <input id="slider" class="slider" type="range" min="5" max="35" value="12" step="1" oninput="sliderChange(this.value,2)" >
+                            </div>
+                        </div>
+
+                        <!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+                        <script>
+                            var $slider = $("#slider");
+                            var $fill = $(".bar .fill");
+
+                            function setBar(){
+                                $fill.css("width", $slider.val() + "%");
+                            }
+
+                            $slider.on("input", setBar);
+
+                            setBar();
+                        </script>
+                    </div>
+
+                    <div class="butn">
+                        <a class="company">13<a>
+                                <a class="btn">Solicitar préstamo</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--Features-->
+<div class="container" id="features">
+    <div class="features">
+        <div class="features_item">
+            <img class="features_icon" src="static/images/feature/feature1.png" alt="">
+            <div class="features_counter"></div>
+            <div class="features_text">Lorem ipsum</div>
+        </div>
+
+        <div class="features_item">
+            <img class="features_icon" src="static/images/feature/feature2.png" alt="">
+            <div class="features_counter"></div>
+            <div class="features_text">Lorem ipsum</div>
+        </div>
+
+        <div class="features_item">
+            <img class="features_icon" src="static/images/feature/feature3.png" alt="">
+            <div class="features_counter"></div>
+            <div class="features_text">Lorem ipsum</div>
+        </div>
+    </div> <!--features-->
+</div><!--container-->
+
+<div class="container" id="function">
+    <div class="function">
+        <h3>How is it working?</h3>
+    </div>
+
+</div>
+
+<!--Cards-->
+<div class="container" id="cards">
+    <div class="cards">
+        <div class="cards_item">
+            <img class="cards_photo" src="static/images/cards/card1.png" alt="">
+            <h4 class="cards_title">Fill out an application</h4>
+            <div class="cards_text"></div>
+        </div>
+        <div class="cards_item">
+            <img class="cards_photo" src="static/images/cards/card2.png" alt="">
+            <h4 class="cards_title">Fill out an application</h4>
+            <div class="cards_text"></div>
+        </div>
+        <div class="cards_item">
+            <img class="cards_photo" src="static/images/cards/card3.png" alt="">
+            <h4 class="cards_title">Fill out an application</h4>
+            <div class="cards_text"></div>
+        </div>
+    </div><!-- /.cards -->
+</div> <!-- /.container -->
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum dui faucibus in ornare quam viverra orci sagittis. Fames ac turpis egestas sed tempus urna et. Faucibus in ornare quam viverra orci.
+Massa massa ultricies mi quis hendrerit dolor magna eget est. Vitae semper quis lectus nulla at volutpat diam ut venenatis.
+Velit scelerisque in dictum non consectetur a erat nam. Id interdum velit laoreet id donec.
+Pellentesque adipiscing commodo elit at imperdiet dui accumsan.
+
+<p>Convallis a cras semper auctor neque vitae. Laoreet suspendisse interdum consectetur libero id faucibus. Accumsan tortor posuere ac ut consequat semper. Maecenas ultricies mi eget mauris pharetra et ultrices neque.
+    Amet nisl suscipit adipiscing bibendum est ultricies integer. Eu feugiat pretium nibh ipsum consequat. Aliquet sagittis id consectetur purus.
+</p>
+Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Etiam erat velit scelerisque in dictum.
+Congue nisi vitae suscipit tellus mauris. Pellentesque sit amet porttitor eget dolor morbi non. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a.
+<div class="info">
+    <div class="wrapper">
+        <div class="column">
+            <h2 class="info_title">El Mejor prestamo</h2>
+            <p class="info_text">Lorem ipsum dolor sit amet</p>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+	<a href="/">на главную</a>	
+	<h2>Авторизация</h2>
+	<div class="auth">
+		<div class="auth_item">
+		<form action="/auth" method="post">
+			<?if(isset($err['empty_field'])):?><div>Вы не заполнили все поля</div><?endif?>
+			<?if(isset($err['wrong_data'])):?><div>Неправильные логин или пароль</div><?endif?>
+			<div class="field_row">Логин: <br /><input class="field" name="login" autocomplete="off" /></div>
+			<div class="field_row">Пароль: <br /><input type="password" class="field" name="password" /></div>
+			<input type="submit" value="Отправить" />
+		</form>
+		</div>
+	</div>

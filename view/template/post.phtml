@@ -1,0 +1,76 @@
+	<a href="/">на главную</a>	
+	<h2><a href="#"><?=$post['title']?></a></h2>
+	<?=$post['text']?>
+	<?if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') :?>
+		<a href = "/post/<?=$post['url']?>/update">Изменить</a>
+		<a href = "/post/<?=$post['url']?>/delete" 
+			onclick="return confirm('Вы действительно хотите удалить данный пост?')">Удалить</a>
+	<?endif?>
+	<h3>Добавить комментарий</h3>
+		
+	<form action="/post/<?=$comments_action?>" method="post">
+		<?if(isset($err['empty_field'])):?><div>Вы не заполнили все поля</div><?endif?>
+		<div class="nick"><? if(isset($_SESSION['nickname'])):?>Никнейм: <?=$_SESSION['nickname']?></div>
+		<div class="text_field">Текст : <br /><textarea rows="7" cols="50" style="font-family:sans-serif;font-size:1em;" class="field" name="text" ><?=@$comment['text']?></textarea></div>
+		<input type="submit" value="Отправить" /><?endif?>
+	</form>
+	
+	<?php if(!isset($_SESSION['nickname'])) :?>
+	<div class="comm_er">
+	<a class="warn" href="/auth">Авторизируйтесь</a>, чтоб добавить комментарий
+	</div>
+	<?endif?>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<h3>Комментарии <span class="comments-number-area">(<?= $comments_all_count ?>)</span>:</h3>
+	<table>
+		<thead>			
+			<colgroup>
+				<col span="<?=$comments_pages_so ?>" style="background:Khaki" />
+			</colgroup>
+		</thead>
+		<tbody>	
+			<tr>
+					<?php for($i=1; $i<=$comments_pages_so; $i++):?>
+						<td<?if($i == $comments_page_current):?> class="paging_current"<?endif?>><a href="/post/<?= $post['url'] ?>/?comments=<?=$i?>"><?=$i?></a></td>
+					<?php endfor ?>
+			 </tr>
+		</tbody>
+	</table>
+	
+		
+
+	<!-- <ul class="comments"> -->
+	<?php for ($i=0; $i<$comments_so; $i++): ?> 
+	<h2><?= $comments[$i]['nickname']; ?></h2>
+	<?= $comments[$i]['date_posted']; ?>
+	<p><?= $comments[$i]['text']; ?></p>
+	<?if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'):?>
+	<form method="post" action="/comment/<?=$comments[$i]['comment_id']?>/delete">
+		<button type="submit" name="id" value="<?=$comments[$i]['comment_id']?>">Удалить</button>		
+	</form>
+	<?endif?><?endfor?>
+	<!--</ul> -->
+
+	
+	<table>
+		<thead>			
+			<colgroup>
+				<col span="<?=$comments_pages_so ?>" style="background:Khaki" />
+			</colgroup>
+		</thead>
+		<tbody>	
+			<tr>
+					<?php for($i=1; $i<=$comments_pages_so; $i++):?>
+						<td<?if($i == $comments_page_current):?> class="paging_current"<?endif?>><a href="/post/<?= $post['url'] ?>/?comments=<?=$i?>"><?=$i?></a></td>
+					<?php endfor ?>
+			 </tr>
+		</tbody>
+	</table>
